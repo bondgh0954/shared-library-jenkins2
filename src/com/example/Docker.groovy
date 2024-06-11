@@ -12,9 +12,9 @@ class Docker implements Serializable{
     buildJar(){
         script.echo 'building application artifact'
         script.sh 'mvn package'
-
-
     }
+
+    
     dockerLogin(){
         script.echo 'logging in to dockerhub repository'
         script.withCredentials([script.usernamePassword(credentialsId:'dockerhub-credentials',usernameVariable:'USER',passwordVariable:'PASS')]){
